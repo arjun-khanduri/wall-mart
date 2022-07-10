@@ -2,10 +2,23 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from '../constants'
 
-export const Title = () => {
+export const Title = ({ title, subTitle, titleSize, subTitleSize }) => {
     return (
         <View>
-            <Text>SubInfo</Text>
+            <Text style={{
+                fontFamily: FONTS.semiBold,
+                fontSize: titleSize,
+                color: COLORS.primary
+            }}>
+                {title}
+            </Text>
+            <Text style={{
+                fontFamily: FONTS.regular,
+                fontSize: subTitleSize,
+                color: COLORS.primary
+            }}>
+                {subTitle}
+            </Text>
         </View>
     )
 }
@@ -35,7 +48,7 @@ export const ImageComponent = ({ src, index }) => {
     )
 }
 
-export const SubInfo = () => {
+export const SubInfo = ({ price }) => {
     return (
         <View style={{
             width: '100%',
@@ -46,12 +59,12 @@ export const SubInfo = () => {
         }}
         >
             <People />
-            <Price />
+            <Price price={price} />
         </View>
     )
 }
 
-export const Price = () => {
+export const Price = ({ price }) => {
     return (
         <View style={{
             paddingHorizontal: SIZES.font,
@@ -74,7 +87,7 @@ export const Price = () => {
                 fontSize: SIZES.small,
                 color: COLORS.primary
             }}>
-                ₹ 1000
+                ₹ {price}
             </Text>
         </View>
     )

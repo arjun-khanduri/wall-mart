@@ -3,8 +3,8 @@ import assets from "./assets";
 const Data = [
   {
     id: "PHOTO-01",
-    name: "My photo",
-    creator: "Original John Doe",
+    name: "My photo 1",
+    artist: "Original John Doe",
     price: 100,
     description:
       "Good photo",
@@ -33,7 +33,7 @@ const Data = [
   {
     id: "PHOTO-02",
     name: "My photo 2",
-    creator: "Original John Doe",
+    artist: "Original John Doe",
     price: 400,
     description:
       "Average photo",
@@ -61,9 +61,9 @@ const Data = [
   },
   {
     id: "PHOTO-03",
-    name: "My photo 2",
-    creator: "Original John Doe",
-    price: 400,
+    name: "My photo 3",
+    artist: "Original John Doe",
+    price: 200,
     description:
       "Average photo",
     image: assets.photo3,
@@ -90,9 +90,9 @@ const Data = [
   },
   {
     id: "PHOTO-04",
-    name: "My photo 2",
-    creator: "Original John Doe",
-    price: 400,
+    name: "My photo 4",
+    artist: "Original John Doe",
+    price: 550,
     description:
       "Average photo",
     image: assets.photo4,
