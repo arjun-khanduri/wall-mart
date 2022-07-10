@@ -2,9 +2,11 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { COLORS, SIZES, SHADOWS, assets } from '../constants';
-import { CircleButton } from '../components';
+import { CircleButton } from './Button';
+import {SubInfo, Price, Title} from './SubInfo';
 
 const Card = ({ data }) => {
+    const navigation = useNavigation();
     return (
         <View style={{
             backgroundColor: COLORS.white,
@@ -26,7 +28,7 @@ const Card = ({ data }) => {
                 />
                 <CircleButton src={assets.heart} right={10} top={10} />
             </View>
-            <Text>Card</Text>
+            <SubInfo />
         </View>
     )
 }
