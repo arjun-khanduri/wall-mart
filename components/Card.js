@@ -2,6 +2,7 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { COLORS, SIZES, SHADOWS, assets } from '../constants';
+import { CircleButton } from '../components';
 
 const Card = ({ data }) => {
     return (
@@ -23,7 +24,7 @@ const Card = ({ data }) => {
                         borderTopRightRadius: SIZES.font
                     }}
                 />
-                
+                <CircleButton src={assets.heart} right={10} top={10} />
             </View>
             <Text>Card</Text>
         </View>
