@@ -1,11 +1,14 @@
-import {useState} from 'react';
-import { View, SafeArea, FlatList, Text } from 'react-native';
+import { useState } from 'react';
+import { View, SafeAreaView, FlatList, Text } from 'react-native';
 
-// import { COLORS}
+import { COLOR, COLORS, Data } from '../constants';
+import { Card, HomeHeader, ModStatusBar } from '../components';
 
 const Home = () => {
     return (
-        <Text>Home</Text>
+        <SafeAreaView style={{ flex: 2 }}>
+            <ModStatusBar background={COLORS.primary} />
+        </SafeAreaView>
     )
 }
 

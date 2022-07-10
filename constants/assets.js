@@ -5,8 +5,8 @@ import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
 
 import logo from "../assets/images/logo.png";
-import photo1 from "../assets/images/photo1.png";
-import photo2 from "../assets/images/photo2.jpeg";
+import photo1 from "../assets/images/photo1.jpeg";
+import photo2 from "../assets/images/photo2.png";
 import photo3 from "../assets/images/photo3.jpeg";
 import photo4 from "../assets/images/photo4.jpeg";
 
