@@ -1,6 +1,6 @@
 import { TouchableOpacity, View, Text, Image } from 'react-native'
 import React from 'react'
-import { COLORS, SHADOWS, SIZES } from '../constants'
+import { COLORS, SHADOWS, SIZES, FONTS } from '../constants'
 
 export const CircleButton = ({ handlePress, ...props }) => {
     return (
@@ -28,10 +28,26 @@ export const CircleButton = ({ handlePress, ...props }) => {
     )
 }
 
-export const RectButton = () => {
+export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
     return (
-        <View>
-            <Text>CircleButton</Text>
-        </View>
+        <TouchableOpacity
+            style={{
+                backgroundColor: COLORS.primary,
+                borderRadius: SIZES.extraLarge,
+                width: minWidth,
+                padding: SIZES.small,
+                ...props,
+            }}
+            onPress={handlePress}
+        >
+            <Text style={{
+                fontFamily: FONTS.regular,
+                fontSize: fontSize,
+                color: COLORS.white,
+                textAlign: 'center'
+            }}>
+                View Details
+            </Text>
+        </TouchableOpacity>
     )
 }

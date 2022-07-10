@@ -2,8 +2,8 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { COLORS, SIZES, SHADOWS, assets } from '../constants';
-import { CircleButton } from './Button';
-import { SubInfo, Price, Title } from './SubInfo';
+import { CircleButton, RectButton } from './Button';
+import { SubInfo, Title } from './SubInfo';
 
 const Card = ({ data }) => {
     const navigation = useNavigation();
@@ -28,16 +28,24 @@ const Card = ({ data }) => {
                 />
                 <CircleButton src={assets.heart} right={10} top={10} />
             </View>
-            <SubInfo price={data.price}/>
+            <SubInfo price={data.price} />
+
             <View style={{
                 width: '100%',
-                padding: SIZES.font
+                padding: SIZES.font,
+                flexDirection: 'row',
+                justifyContent: 'space-between'
             }}>
                 <Title
                     title={data.name}
                     subTitle={data.artist}
                     titleSize={SIZES.large}
                     subTitleSize={SIZES.small}
+                />
+                <RectButton
+                    minWidth={120}
+                    fontSize={SIZES.font}
+                    handlePress={() => navigation.navigate('Details', { data })}
                 />
             </View>
         </View>
