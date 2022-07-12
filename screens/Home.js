@@ -1,21 +1,29 @@
 import { useState } from 'react';
 import { View, SafeAreaView, FlatList, Text } from 'react-native';
 
-import { COLOR, COLORS, Data } from '../constants';
+import { COLORS, Data } from '../constants';
 import { Card, HomeHeader, ModStatusBar } from '../components';
 
 const Home = () => {
+    const [data, setData] = useState(Data);
+    const handleSearch = (value) => {
+        if (!value.length)
+            setData(Data)
+        const filteredData = Data.filter((item) =>
+            item.name.toLowerCase().includes(value.toLowerCase()));
+        setData(filteredData);
+    }
     return (
         <SafeAreaView style={{ flex: 2 }}>
             <ModStatusBar background={COLORS.primary} />
             <View style={{ flex: 2 }}>
                 <View style={{ zIndex: 0 }}>
                     <FlatList
-                        data={Data}
-                        renderItem={({ item }) => <Card data={item}/>}
+                        data={data}
+                        renderItem={({ item }) => <Card data={item} />}
                         keyExtractor={item => item.id}
                         showsVerticalScrollIndicator={false}
-                        ListHeaderComponent={<HomeHeader />}
+                        ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
                     />
                 </View>
 
