@@ -45,6 +45,7 @@ const Card = ({ data }) => {
                 <RectButton
                     minWidth={120}
                     fontSize={SIZES.font}
+                    text={'View Details'}
                     handlePress={() => navigation.navigate('Details', { data })}
                 />
             </View>

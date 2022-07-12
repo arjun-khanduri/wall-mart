@@ -9,7 +9,7 @@ const Data = [
     description:
       "Good photo",
     image: assets.photo1,
-    bids: [
+    comments: [
       {
         id: "REVIEW-01",
         name: "John Doe 1",
@@ -38,7 +38,7 @@ const Data = [
     description:
       "Average photo",
     image: assets.photo2,
-    bids: [
+    comments: [
       {
         id: "REVIEW-01",
         name: "John Doe 1",
@@ -67,7 +67,7 @@ const Data = [
     description:
       "Average photo",
     image: assets.photo3,
-    bids: [
+    comments: [
       {
         id: "REVIEW-01",
         name: "John Doe 1",
@@ -96,7 +96,7 @@ const Data = [
     description:
       "Average photo",
     image: assets.photo4,
-    bids: [
+    comments: [
       {
         id: "REVIEW-01",
         name: "John Doe 1",

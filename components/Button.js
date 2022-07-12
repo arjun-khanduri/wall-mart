@@ -28,7 +28,7 @@ export const CircleButton = ({ handlePress, ...props }) => {
     )
 }
 
-export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
+export const RectButton = ({ text, minWidth, fontSize, handlePress, ...props }) => {
     return (
         <TouchableOpacity
             style={{
@@ -46,7 +46,7 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
                 color: COLORS.white,
                 textAlign: 'center'
             }}>
-                View Details
+                {text}
             </Text>
         </TouchableOpacity>
     )
