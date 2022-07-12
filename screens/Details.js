@@ -47,13 +47,19 @@ const Details = ({ route, navigation }) => {
                 position: 'absolute',
                 bottom: 0,
                 paddingVertical: SIZES.font,
-                justifyContent: 'center',
+                justifyContent: 'space-between',
                 alignItems: 'center',
                 backgroundColor: 'rgba(255,255,255,0.5)',
+                flexDirection: 'row',
                 zIndex: 1
             }}>
                 <RectButton
-                    minWidth={170}
+                    minWidth={150}
+                    fontSize={SIZES.large}
+                    {...SHADOWS.dark}
+                    text={'Comment'} />
+                <RectButton
+                    minWidth={150}
                     fontSize={SIZES.large}
                     {...SHADOWS.dark}
                     text={'Buy Picture'} />
@@ -68,6 +74,11 @@ const Details = ({ route, navigation }) => {
                     <React.Fragment>
                         <DetailsHeader data={data} navigation={navigation} />
                         <SubInfo price={data.price} />
+                        <View style={{
+                            padding: SIZES.font
+                        }}>
+                            <DetailsDesc data={data} />
+                        </View>
                     </React.Fragment>
                 )}
             />
