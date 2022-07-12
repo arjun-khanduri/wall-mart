@@ -5,7 +5,7 @@ import { Title } from './SubInfo'
 import { COLORS, SIZES, FONTS } from '../constants'
 
 const DetailsDesc = ({ data }) => {
-  const [descText, setDescText] = useState(data.description.slice(0, 100) + '...');
+  const [descText, setDescText] = useState(data.description.length > 100 ? data.description.slice(0, 100) + '...' : data.description);
   const [showMore, setShowMore] = useState(false);
 
   const handlePressDescription = () => {
@@ -44,16 +44,18 @@ const DetailsDesc = ({ data }) => {
             lineHeight: SIZES.large
           }}>
             {descText}
-            <Text style={{
-              fontSize: SIZES.small,
-              fontFamily: FONTS.semiBold,
-              color: COLORS.primary,
-              lineHeight: SIZES.large
-            }}
-              onPress={handlePressDescription}
-            >
-              {showMore ? ' Show Less' : 'Show More'}
-            </Text>
+            {descText.length > 100 && (
+              <Text style={{
+                fontSize: SIZES.small,
+                fontFamily: FONTS.semiBold,
+                color: COLORS.primary,
+                lineHeight: SIZES.large
+              }}
+                onPress={handlePressDescription}
+              >
+                {showMore ? ' Show Less' : 'Show More'}
+              </Text>
+            )}
           </Text>
         </View>
       </View>
