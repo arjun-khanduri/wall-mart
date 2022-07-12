@@ -3,7 +3,6 @@ import {
     Text,
     SafeAreaView,
     Image,
-    StatusBar,
     FlatList
 } from 'react-native';
 
@@ -49,7 +48,7 @@ const Details = ({ route, navigation }) => {
                 paddingVertical: SIZES.font,
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                backgroundColor: 'rgba(255,255,255,0.5)',
+                backgroundColor: 'rgba(255,255,255,0.25)',
                 flexDirection: 'row',
                 zIndex: 1
             }}>
@@ -66,7 +65,7 @@ const Details = ({ route, navigation }) => {
             </View>
             <FlatList
                 data={data.comments}
-                renderItem={({ item }) => (<DetailsComments comment={item} />)}
+                renderItem={({ item }) => (<DetailsComments user={item} />)}
                 keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
@@ -78,6 +77,15 @@ const Details = ({ route, navigation }) => {
                             padding: SIZES.font
                         }}>
                             <DetailsDesc data={data} />
+                            {data.comments.length > 0 && (
+                                <Text style={{
+                                    fontSize: SIZES.font,
+                                    fontFamily: FONTS.semiBold,
+                                    color: COLORS.primary
+                                }}>
+                                    Comments:
+                                </Text>
+                            )}
                         </View>
                     </React.Fragment>
                 )}
